@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Dreamscape Properties</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="home-container">
+    <h1>Welcome to Dreamscape Properties</h1>
+    <p>We are thrilled to have you with us! Explore the best residential and commercial properties.</p>
+    
+    <div class="carousel-container">
+      <div class="carousel">
+        <img src="HaridaImages/house1.png" alt="House 1" class="carousel-image">
+        <img src="HaridaImages/Harida house7.png" alt="House 2" class="carousel-image">
+        <img src="HaridaImages/house6.png" alt="House 3" class="carousel-image">
+        <!-- Add more images as needed -->
+      </div>
+      <button class="prev" id="prevBtn">❮</button>
+      <button class="next" id="nextBtn">❯</button>
+    </div>
+
+    <section class="about-section">
+      <h2>About Dreamscape Properties</h2>
+      <p>At Dreamscape Properties, we specialize in luxury residential and commercial real estate. Our mission is to deliver properties that exceed expectations with design, quality, and innovation.</p>
+      <a href="about.html">Learn More About Us</a>
+    </section>
+
+    <section class="property-listing">
+      <h2>Our Latest Properties</h2>
+      <div class="property-item">
+        <img src="HaridaImages/house1.png" alt="Property 1">
+        <p>Dreamscape Court I - A beautiful residential property in Lekki County with private swimming pools and beach views.</p>
+        <a href="properties.html">Explore More</a>
+      </div>
+      <div class="property-item">
+        <img src="HaridaImages/hooouuusee2.jpeg" alt="Property 2">
+        <p>Dreamscape Court II - Stunning residential homes in Ajah Lekki with beach views and a private swimming pool.</p>
+        <a href="properties.html">Explore More</a>
+      </div>
+    </section>
+    
+    <footer>
+      <p>&copy; 2025 Dreamscape Properties. All Rights Reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Image Carousel
+    const carouselImages = document.querySelectorAll('.carousel-image');
+    let currentImageIndex = 0;
+
+    function showImage(index) {
+      carouselImages.forEach((img, i) => {
+        img.style.display = i === index ? 'block' : 'none';
+      });
+    }
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
+      showImage(currentImageIndex);
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      currentImageIndex = (currentImageIndex - 1 + carouselImages.length) % carouselImages.length;
+      showImage(currentImageIndex);
+    });
+
+    // Initialize the carousel
+    showImage(currentImageIndex);
+  </script>
+</body>
+</html>
